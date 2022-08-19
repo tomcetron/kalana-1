@@ -6,7 +6,7 @@ public class Main {
 		
 	public static void main(String[] args) {
 		
-		ReviewDatabase rd = new ReviewDatabase(15);
+		ReviewDatabase rd = new ReviewDatabase(20);
 		
 		// 2 instance od tridy Author
 		Author aut1 = new Author("Brooks Entertainment", "shon.brooks@yahoo.com");
@@ -14,7 +14,6 @@ public class Main {
 		
 		
 		// 3 instance od tridy Game
-		
 		Game g1 = new Game("Slender", Genre.ACTION);
 		Game g2 = new Game("Boovie",  Genre.STRATEGY);
 		Game g3 = new Game("Quadrax",  Genre.LOGICAL);
@@ -24,7 +23,7 @@ public class Main {
 		Review rev1 = new Review(new Game("Minecraft", Genre.STRATEGY), new Author("Tonda", "tonik@centrum.cz"), 12);
 		rd.addNew(rev1);
 		
-		Review rev2 = new Review(new Game("FarCry1", Genre.RPG), new Author("Tonda", "tonik@centrum.cz"), 90);
+		Review rev2 = new Review(new Game("FarCry3", Genre.RPG), new Author("Tonda", "tonik@centrum.cz"), 93);
 		rd.addNew(rev2);
 		
 		Review rev3 = new Review(new Game("Dark Souls", Genre.ADVENTURE), new Author("Darker", "emogiii@gmail.com"), 60);
@@ -42,20 +41,29 @@ public class Main {
 		
 		
 		// volani 2. metody
-		//System.out.println(rd.getGameWithHighestScore());
+		System.out.println("METODA GETGAMEWITHHIGHESTSCORE()");
+		System.out.println(rd.getGameWithHighestScore());
 		
+		System.out.println("-----------------");
 		
 		// volani 3. metody
-		//Game[] vyslednePoleDleGenre = rd.getAllGames("STRATEGY");
-		//System.out.println(Arrays.toString(vyslednePoleDleGenre));
+		System.out.println("METODA GETALLGAMES(GENRE)");
+		Game[] vyslednePoleDleGenre = rd.getAllGames("STRATEGY");
+		System.out.println(Arrays.toString(vyslednePoleDleGenre));
 		
+		System.out.println("-----------------");
 		
 		// volani 4. metody
+		System.out.println("METODA GETAVERAGESCOREFORGAMEWITHNAME(NAME)");
 		System.out.println(rd.getAverageScoreForGameWithName("CounterStrike"));
 		
+		System.out.println("-----------------");
+		
 		// volani 5. metody
-		//Review[] res = rd.getAllReviews("Darker");
-		//System.out.println(Arrays.toString(res));
+		System.out.println("METODA GETALLREVIEWS(NAME)");
+		Review[] res = rd.getAllReviews("Darker");
+		System.out.println(Arrays.toString(res));
+		
 		
 		
 	}

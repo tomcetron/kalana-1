@@ -12,13 +12,14 @@ public class ReviewDatabase {
 		reviews = new Review[velikostPole];
 	}
 	
+	// 12.a
 	public void addNew(Review review) {
 		if(lastIndex < reviews.length - 1) 
 			reviews[++lastIndex] = review;
 	}
 	
 	
-	// vraci pocet vlozenych reviews, tedy NOT NULL
+	// metoda navic, vraci pocet vlozenych reviews do pole
 	public int getReviewCount() {
 		int counter = 0;
 		for (int i = 0; i < reviews.length; i++) {
@@ -29,7 +30,7 @@ public class ReviewDatabase {
 		return counter;
 	}
 	
-
+	// 12.b (v pripade ze by existovalo vice her se stejnym score tak neni navrzeno)
 	public Game getGameWithHighestScore() {
 		Game game = null;
 		int temp = 0;
@@ -41,8 +42,21 @@ public class ReviewDatabase {
 			}				
 		}
 		game = reviews[temp].getGame();
-
 		return game;
+	}
+	
+	// 12.c
+	public Game[] getAllGames(String requiredGenre) {
+		int pocetNalezenychPrvku = 0;
+		Game[] pole = new Game[getReviewCount()];
+		for (int i = 0; i < pole.length; i++) {
+			if(reviews[i].getGame().getGenre().equals(requiredGenre) ) {
+				pole[i] = reviews[i].getGame(); 
+				pocetNalezenychPrvku++;
+			}
+		}
+		pole = plnePole(pole, pocetNalezenychPrvku);
+		return pole;
 	}
 	
 	// 12.d
@@ -57,27 +71,11 @@ public class ReviewDatabase {
 				}
 			}
 			average = rev / occur;
-			
 		 return average;
 	 }
+
 	
-	
-	
-	public Game[] getAllGames(String requiredGenre) {
-		int pocetNalezenychPrvku = 0;
-		Game[] pole = new Game[getReviewCount()];
-		for (int i = 0; i < pole.length; i++) {
-			if(reviews[i] != null && reviews[i].getGame().getGenre().equals(requiredGenre) ) {
-				pole[i] = reviews[i].getGame(); 
-				pocetNalezenychPrvku++; // pocet nalezenych prvku v poli vcetne NULL mist
-			}
-		}
-		pole = plnePole(pole, pocetNalezenychPrvku);
-		return pole;
-	}
-	
-	
-	  // zbavi pole prazdnych NULL mist, pro Game data type
+	  // zbavi pole prazdnych NULL mist, pro Game data type metodu
 	  private Game[] plnePole(Game[] array, int pocetNalezenychPrvku) { 
 		  int newIdx = -1;
 		  Game[] orezanePole = new Game[pocetNalezenychPrvku];
@@ -89,7 +87,7 @@ public class ReviewDatabase {
 		  return orezanePole;
 	  }
 	  
-	  // zbavi pole prazdnych NULL mist, pro Review data type
+	  // zbavi pole prazdnych NULL mist, pro Review data type metodu
 	  private Review[] plnePoleForReview(Review[] array, int pocetNalezenychPrvku) { 
 		  int newIdx = -1;
 		  Review[] orezanePole = new Review[pocetNalezenychPrvku];
@@ -101,7 +99,7 @@ public class ReviewDatabase {
 		  return orezanePole;
 	  }
 	  
-	  // 12.e .... jeste upravim
+	  // 12.e
 	  public Review[] getAllReviews(String nickname) {
 		  int pocetNalezenychPrvku = 0;
 		  Review[] allReviews = new Review[getReviewCount()];
