@@ -1,0 +1,46 @@
+Vaším úkolem je navrhnout a naprogramovat datovou strukturu, která je schopná uchovávat informace o herních recenzích jednotlivých autorů.
+Implementujte podle následujícího zadání:
+1.	Napište třídu Game s privátními atributy: name (String), genre (String).
+  a.	Atribut genre může například nabývat hodnot: RPG, ACTION, ADVENTURE, STRATEGY atd.
+
+2.	Třída Game má jeden parametrický konstruktor.
+
+3.	Třída Game má metody:
+  a.	String getName()
+  b.	String getGenre()
+  c.	String getInfo()
+
+4.	Napište třídu Author s privátními atributy: nickname (String), email (String).
+
+5.	Třída Author má jeden parametrický konstruktor.
+
+6.	Třída Author má metody:
+  a.	String getNickname()
+  b.	String getEmail()
+  c.	String getInfo()
+
+7.	Napište třídu Review s privátními atributy: game (Game), author (Author) a score (int – hodnocení hry autorem).
+  a.	Atribut score obsahuje hodnocení hry v rozsahu 0 – 100.
+
+8.	Třída Review má jeden parametrický konstruktor.
+
+9.	Třída Review má metody:
+  a.	Game getGame()
+  b.	Author getAuthor()
+  c.	Int getScore()
+  d.	String getInfo()
+
+10.	Napište třídu ReviewDatabase, která bude schopná uložit objekty typu Review
+
+11.	Třída ReviewDatabase má jeden parametrický konstruktor s nastavením počáteční velikosti databáze (pole recenzí).
+
+12.	Třída ReviewDatabase má metody:
+  a.	void addNew(Review review)
+  b.	Game getGameWithHighestScore()
+  c.	Game[] getAllGames(String requiredGenre)
+  d.	Double getAverageScoreForGameWithName(String gameName)
+  e.	Review[] getAllReviews(String nickname)
+
+13.	V metodě main vytvořte objekt od třídy ReviewDatabase.
+  a.	Vytvořte minimálně dvě instance od třídy Author, tři instance od třídy Game a šest instancí od třídy Review.
+  b.	Otestujte funkčnost všech implementovaných metod.
