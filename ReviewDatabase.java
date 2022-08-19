@@ -45,7 +45,7 @@ public class ReviewDatabase {
 		return game;
 	}
 	
-	// 12.d // hotovo
+	// 12.d
 	public Double getAverageScoreForGameWithName(String gameName) {
 			double average = 0.0;
 			double rev = 0.0;
@@ -101,7 +101,7 @@ public class ReviewDatabase {
 		  return orezanePole;
 	  }
 	  
-	  // 12.e
+	  // 12.e .... jeste upravim, neni idealni..
 	  public Review[] getAllReviews(String nickname) {
 		  int pocetNalezenychPrvku = 0;
 		  Review[] allReviews = new Review[getReviewCount()];
