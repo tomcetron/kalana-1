@@ -101,7 +101,7 @@ public class ReviewDatabase {
 		  return orezanePole;
 	  }
 	  
-	  // 12.e .... jeste upravim, neni idealni..
+	  // 12.e .... jeste upravim
 	  public Review[] getAllReviews(String nickname) {
 		  int pocetNalezenychPrvku = 0;
 		  Review[] allReviews = new Review[getReviewCount()];
