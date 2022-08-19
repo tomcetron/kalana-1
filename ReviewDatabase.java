@@ -45,15 +45,19 @@ public class ReviewDatabase {
 		return game;
 	}
 	
-	
+	// 12.d // hotovo
 	public Double getAverageScoreForGameWithName(String gameName) {
-			Double average = 0.0;
-			for (int i = 0; i < reviews.length; i++) {
-				if(reviews[i] != null && reviews[i].getGame().getName().equals(gameName)) {
-					average = (double) reviews[i].getScore();
+			double average = 0.0;
+			double rev = 0.0;
+			int occur = 0;
+			for (int i = 0; i < getReviewCount(); i++) {
+				if (reviews[i].getGame().getName().equals(gameName)) {
+					occur++;
+					rev = rev + reviews[i].getScore();
 				}
-				
 			}
+			average = rev / occur;
+			
 		 return average;
 	 }
 	
@@ -63,7 +67,7 @@ public class ReviewDatabase {
 		int pocetNalezenychPrvku = 0;
 		Game[] pole = new Game[getReviewCount()];
 		for (int i = 0; i < pole.length; i++) {
-			if(reviews[i].getGame().getGenre().equals(requiredGenre) ) {
+			if(reviews[i] != null && reviews[i].getGame().getGenre().equals(requiredGenre) ) {
 				pole[i] = reviews[i].getGame(); 
 				pocetNalezenychPrvku++; // pocet nalezenych prvku v poli vcetne NULL mist
 			}
@@ -97,7 +101,7 @@ public class ReviewDatabase {
 		  return orezanePole;
 	  }
 	  
-	  
+	  // 12.e
 	  public Review[] getAllReviews(String nickname) {
 		  int pocetNalezenychPrvku = 0;
 		  Review[] allReviews = new Review[getReviewCount()];

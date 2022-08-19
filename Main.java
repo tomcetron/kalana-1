@@ -21,53 +21,42 @@ public class Main {
 		
 		
 		// 6 instanci od tridy Review
-		Review rev1 = new Review(new Game("Minecraft", Genre.STRATEGY), new Author("Microsoft", "microsoft@microsoft.com"), 12);
+		Review rev1 = new Review(new Game("Minecraft", Genre.STRATEGY), new Author("Tonda", "tonik@centrum.cz"), 12);
 		rd.addNew(rev1);
 		
-		Review rev2 = new Review(new Game("FarCry1", Genre.RPG), new Author("Ubisoft", "ubisoft@mubisoft.com"), 90);
+		Review rev2 = new Review(new Game("FarCry1", Genre.RPG), new Author("Tonda", "tonik@centrum.cz"), 90);
 		rd.addNew(rev2);
 		
-		Review rev3 = new Review(new Game("Dark Souls", Genre.ADVENTURE), new Author("Darker", "prehist@gmail.com"), 60);
+		Review rev3 = new Review(new Game("Dark Souls", Genre.ADVENTURE), new Author("Darker", "emogiii@gmail.com"), 60);
 		rd.addNew(rev3);
 		
-		Review rev4 = new Review(new Game("CounterStrike", Genre.ACTION), new Author("Darker", "cs@gmail.com"), 91);
+		Review rev4 = new Review(new Game("CounterStrike", Genre.ACTION), new Author("Darker", "emogiii@gmail.com"), 60);
 		rd.addNew(rev4);
 		
-		Review rev5 = new Review(new Game("GoodGameEmpire", Genre.STRATEGY), new Author("Whoever", "goodgame@gmail.com"), 94);
+		Review rev5 = new Review(new Game("CounterStrike", Genre.STRATEGY), new Author("Fantomas", "emogiii@gmail.com"), 55);
 		rd.addNew(rev5);
 		
-		Review rev6 = new Review(new Game("AgeOfEmpires", Genre.STRATEGY), new Author("Age", "age@gmail.com"), 14);
+		Review rev6 = new Review(new Game("AgeOfEmpires", Genre.STRATEGY), new Author("Levius", "leviusek@gmail.com"), 14);
 		rd.addNew(rev6);
 		
 		
 		
 		// volani 2. metody
-		System.out.println(rd.getGameWithHighestScore());
+		//System.out.println(rd.getGameWithHighestScore());
 		
-		//System.out.println(rd.getReviewCount());
 		
 		// volani 3. metody
-		Game[] vyslednePoleDleGenre = rd.getAllGames("STRATEGY");
-		System.out.println(Arrays.toString(vyslednePoleDleGenre));
+		//Game[] vyslednePoleDleGenre = rd.getAllGames("STRATEGY");
+		//System.out.println(Arrays.toString(vyslednePoleDleGenre));
 		
 		
 		// volani 4. metody
-		System.out.println(rd.getAverageScoreForGameWithName("Dark Souls"));
+		System.out.println(rd.getAverageScoreForGameWithName("CounterStrike"));
 		
 		// volani 5. metody
-		Review[] res = rd.getAllReviews("Darker");
-		System.out.println(Arrays.toString(res));
+		//Review[] res = rd.getAllReviews("Darker");
+		//System.out.println(Arrays.toString(res));
 		
-		
-		/*
-		 * String[] outputCountries = ms.getAvailableCountries();
-		 * System.out.println(Arrays.toString(outputCountries));
-		 * System.out.println("---------------------------");
-		 * 
-		 * Item[] getitems = ms.getItems(1585.23);
-		 * System.out.println(Arrays.toString(getitems));
-		 * System.out.println("---------------------------");
-		 */		
 		
 	}
 
